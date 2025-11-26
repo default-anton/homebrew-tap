@@ -5,53 +5,61 @@
 class Wt < Formula
   desc "Git worktree manager"
   homepage "https://github.com/default-anton/wt"
-  version "0.3.0"
+  version "0.3.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/default-anton/wt/releases/download/v0.3.0/wt_0.3.0_darwin_amd64.tar.gz"
-      sha256 "51424be67285ec00f1b0860bb8e038029d9a69730a8148b1a7b341e14f4c5ede"
+      url "https://github.com/default-anton/wt/releases/download/v0.3.1/wt_0.3.1_darwin_amd64.tar.gz"
+      sha256 "dcc87bc53976f34189a6349b27b10350aa2588b4f4596e9d18119abb4edfe76f"
 
       def install
         bin.install "wt"
-        bash_completion.install "shell/wt.bash" => "wt"
-        zsh_completion.install "shell/wt.zsh" => "_wt"
-        fish_completion.install "shell/wt.fish" => "wt.fish"
+
+        # Install shell-init (wrapper function) + completions combined
+        (bash_completion/"wt").write Utils.safe_popen_read(bin/"wt", "shell-init", "bash") + "\n" + Utils.safe_popen_read(bin/"wt", "completion", "bash")
+        (zsh_completion/"_wt").write Utils.safe_popen_read(bin/"wt", "shell-init", "zsh") + "\n" + Utils.safe_popen_read(bin/"wt", "completion", "zsh")
+        (fish_completion/"wt.fish").write Utils.safe_popen_read(bin/"wt", "shell-init", "fish") + "\n" + Utils.safe_popen_read(bin/"wt", "completion", "fish")
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/default-anton/wt/releases/download/v0.3.0/wt_0.3.0_darwin_arm64.tar.gz"
-      sha256 "75b170dd56ed480de16981552991a32ac3c3570564374c889906022f3e522b9b"
+      url "https://github.com/default-anton/wt/releases/download/v0.3.1/wt_0.3.1_darwin_arm64.tar.gz"
+      sha256 "dc131b235c4b4cffb0a720ec4b3b75bfc37983f1a8a464f23a6fd3909d542725"
 
       def install
         bin.install "wt"
-        bash_completion.install "shell/wt.bash" => "wt"
-        zsh_completion.install "shell/wt.zsh" => "_wt"
-        fish_completion.install "shell/wt.fish" => "wt.fish"
+
+        # Install shell-init (wrapper function) + completions combined
+        (bash_completion/"wt").write Utils.safe_popen_read(bin/"wt", "shell-init", "bash") + "\n" + Utils.safe_popen_read(bin/"wt", "completion", "bash")
+        (zsh_completion/"_wt").write Utils.safe_popen_read(bin/"wt", "shell-init", "zsh") + "\n" + Utils.safe_popen_read(bin/"wt", "completion", "zsh")
+        (fish_completion/"wt.fish").write Utils.safe_popen_read(bin/"wt", "shell-init", "fish") + "\n" + Utils.safe_popen_read(bin/"wt", "completion", "fish")
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/default-anton/wt/releases/download/v0.3.0/wt_0.3.0_linux_amd64.tar.gz"
-      sha256 "838eee5d01b6d17957a44e826aaf5c13d1621d42f3a9d0f3b6d1272ab71428a1"
+      url "https://github.com/default-anton/wt/releases/download/v0.3.1/wt_0.3.1_linux_amd64.tar.gz"
+      sha256 "0528b7c920c5bffd8298dfb98585bc429afd55d7afe830401a3abe0655f55d0f"
       def install
         bin.install "wt"
-        bash_completion.install "shell/wt.bash" => "wt"
-        zsh_completion.install "shell/wt.zsh" => "_wt"
-        fish_completion.install "shell/wt.fish" => "wt.fish"
+
+        # Install shell-init (wrapper function) + completions combined
+        (bash_completion/"wt").write Utils.safe_popen_read(bin/"wt", "shell-init", "bash") + "\n" + Utils.safe_popen_read(bin/"wt", "completion", "bash")
+        (zsh_completion/"_wt").write Utils.safe_popen_read(bin/"wt", "shell-init", "zsh") + "\n" + Utils.safe_popen_read(bin/"wt", "completion", "zsh")
+        (fish_completion/"wt.fish").write Utils.safe_popen_read(bin/"wt", "shell-init", "fish") + "\n" + Utils.safe_popen_read(bin/"wt", "completion", "fish")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/default-anton/wt/releases/download/v0.3.0/wt_0.3.0_linux_arm64.tar.gz"
-      sha256 "506578c4f6343ccc91238b6e0d362986f73b93c964f5f0de7ede3565a80c360f"
+      url "https://github.com/default-anton/wt/releases/download/v0.3.1/wt_0.3.1_linux_arm64.tar.gz"
+      sha256 "6332a391028bc884e0f20d1e5a27f87cecf0674be111f95322121e77f12b78ad"
       def install
         bin.install "wt"
-        bash_completion.install "shell/wt.bash" => "wt"
-        zsh_completion.install "shell/wt.zsh" => "_wt"
-        fish_completion.install "shell/wt.fish" => "wt.fish"
+
+        # Install shell-init (wrapper function) + completions combined
+        (bash_completion/"wt").write Utils.safe_popen_read(bin/"wt", "shell-init", "bash") + "\n" + Utils.safe_popen_read(bin/"wt", "completion", "bash")
+        (zsh_completion/"_wt").write Utils.safe_popen_read(bin/"wt", "shell-init", "zsh") + "\n" + Utils.safe_popen_read(bin/"wt", "completion", "zsh")
+        (fish_completion/"wt.fish").write Utils.safe_popen_read(bin/"wt", "shell-init", "fish") + "\n" + Utils.safe_popen_read(bin/"wt", "completion", "fish")
       end
     end
   end
