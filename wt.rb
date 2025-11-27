@@ -5,13 +5,13 @@
 class Wt < Formula
   desc "Git worktree manager"
   homepage "https://github.com/default-anton/wt"
-  version "0.3.3"
+  version "0.3.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/default-anton/wt/releases/download/v0.3.3/wt_0.3.3_darwin_amd64.tar.gz"
-      sha256 "12c20afab502f6b64dd9a40e61adf6920f8c15b16d78a8431e57802fae67f03a"
+      url "https://github.com/default-anton/wt/releases/download/v0.3.4/wt_0.3.4_darwin_amd64.tar.gz"
+      sha256 "2ef28c03a653874859b295102927994654acb8d173d65710543dee1b9a0b71b1"
 
       def install
         bin.install "wt"
@@ -23,8 +23,8 @@ class Wt < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/default-anton/wt/releases/download/v0.3.3/wt_0.3.3_darwin_arm64.tar.gz"
-      sha256 "45c71dc5b25cbfa0b689f930fac5ea69ac8c42b1700e2ba219c417193eb85bc7"
+      url "https://github.com/default-anton/wt/releases/download/v0.3.4/wt_0.3.4_darwin_arm64.tar.gz"
+      sha256 "67aa357d02bfdb562c4dc47f5fcf8afdb2a71090a78160b92cdaf49af5d0effe"
 
       def install
         bin.install "wt"
@@ -39,8 +39,8 @@ class Wt < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/default-anton/wt/releases/download/v0.3.3/wt_0.3.3_linux_amd64.tar.gz"
-      sha256 "88b854efa31385305580e55a789b4a0e4b3fc84aa32b53c9c92e491c2149f8be"
+      url "https://github.com/default-anton/wt/releases/download/v0.3.4/wt_0.3.4_linux_amd64.tar.gz"
+      sha256 "bfa2d6e56314827581767e7926cdd50fc363b743a34f7ec346751964303521cb"
       def install
         bin.install "wt"
 
@@ -51,8 +51,8 @@ class Wt < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/default-anton/wt/releases/download/v0.3.3/wt_0.3.3_linux_arm64.tar.gz"
-      sha256 "da2bfa8f5c022fa381e1ab5a1f930dab9397a0d94edb2993161a534bedfe5b13"
+      url "https://github.com/default-anton/wt/releases/download/v0.3.4/wt_0.3.4_linux_arm64.tar.gz"
+      sha256 "97a30fc23a9b34436bbd730e7d152648ca5fc82a37959a2aeef4a854f06c77b5"
       def install
         bin.install "wt"
 
